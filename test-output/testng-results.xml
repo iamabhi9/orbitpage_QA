@@ -2,43 +2,19 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="58" started-at="2016-09-05T06:01:09Z" finished-at="2016-09-05T06:01:09Z">
+  <suite name="Default suite" duration-ms="3841" started-at="2016-09-05T06:13:46Z" finished-at="2016-09-05T06:13:50Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="58" started-at="2016-09-05T06:01:09Z" finished-at="2016-09-05T06:01:09Z">
+    <test name="Default test" duration-ms="3841" started-at="2016-09-05T06:13:46Z" finished-at="2016-09-05T06:13:50Z">
       <class name="com.NewTest">
-        <test-method status="PASS" signature="f(java.lang.Integer, java.lang.String)[pri:0, instance:com.NewTest@7c0e2abd]" name="f" duration-ms="14" started-at="2016-09-05T11:31:09Z" data-provider="dp" finished-at="2016-09-05T11:31:09Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[a]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="f()[pri:0, instance:com.NewTest@4de8b406]" name="f" duration-ms="1360" started-at="2016-09-05T11:43:46Z" finished-at="2016-09-05T11:43:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- f -->
-        <test-method status="PASS" signature="f(java.lang.Integer, java.lang.String)[pri:0, instance:com.NewTest@7c0e2abd]" name="f" duration-ms="1" started-at="2016-09-05T11:31:09Z" data-provider="dp" finished-at="2016-09-05T11:31:09Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[b]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="f1()[pri:0, instance:com.NewTest@4de8b406]" name="f1" duration-ms="2442" started-at="2016-09-05T11:43:48Z" finished-at="2016-09-05T11:43:50Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- f -->
+        </test-method> <!-- f1 -->
       </class> <!-- com.NewTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
