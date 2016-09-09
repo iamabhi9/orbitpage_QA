@@ -8,10 +8,16 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Stack;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 
 public class NewTest {
@@ -19,7 +25,7 @@ public class NewTest {
 	 private final String USER_AGENT = "Mozilla/5.0";
 
   @Test
-  public void f() throws Exception {
+  public void LoginMyUser() throws Exception {
 	  
  
 	 login();
@@ -27,10 +33,10 @@ public class NewTest {
   }
   
   @Test
-  public void f1() throws Exception {
+  public void RegisterNewUser() throws Exception {
 	  
  
-	  register();
+ register();
 	  
   }
   
@@ -43,24 +49,74 @@ public class NewTest {
 		 String requestUrl = "http://www.orbitpage.com/Auth/Login";
 		 
 
-		 String payload = "{\"Username\":\"abhinav\",\"Password\":\"Abhi999@\",\"Type\":\"web\",\"KeepMeSignedInCheckBox\":true}";
+		 String payload = "{\"Username\":\"abhinav\",\"Password\":\"abhinav\",\"Type\":\"web\",\"KeepMeSignedInCheckBox\":true}";
 	 
-		 postWorker(requestUrl, payload);
+		 String responce=	 postWorker(requestUrl, payload);
+		 
+		 JSONParser parser = new JSONParser();
+
+		  JSONObject newobj= (JSONObject) parser.parse(responce);  
+		 String user=null;
+		  
+		  JSONObject oneob =(JSONObject) newobj.get("Payload");
+		     user=oneob.get("Username").toString();
+
+		  
+		  
+		 if(user.equals("abhinav"))
+		 {
+			 Assert.assertTrue(true);
+		 }
+		 else
+		 {
+			 Assert.assertTrue(false);
+ 
+		 }
 		 
 	 }
-	 
+
+  
+  
+  
+   
+  
+  
+  
   private static void register() throws Exception {
 		 
 		 String requestUrl = "http://www.orbitpage.com/Auth/CreateAccount";
 		 
 
-		 String payload = "{\"FirstName1\":\"user F name\",\"LastName\":\"user L Name\",\"Gender\":\"male\",\"EmailId\":\"username@aa.com\",\"Username\":\"username\",\"Password\":\"Abhinav\",\"Source\":\"web\",\"Referral\":\"NA\"}";
-	 
-		 postWorker(requestUrl, payload);
+		 String payload = "{\"FirstName1\":\"user F name\",\"LastName\":\"user L Name\",\"Gender\":\"male\",\"EmailId\":\""
+		 		+ "DeleteThisUser+"+System.currentTimeMillis()/1000+"@gmail.com"
+		 		+ "\",\"Username\":\"user"
+		 		+ System.currentTimeMillis()/1000+"\",\"Password\":\"Abhinav\",\"Source\":\"web\",\"Referral\":\"NA\"}";
 		 
+	 System.out.println(payload);
+	 
+	 System.out.println();
+	 
+	String responce=	 postWorker(requestUrl, payload);
+	
+	
+	 JSONParser parser = new JSONParser();
+
+	  JSONObject newobj= (JSONObject) parser.parse(responce);  
+	 
+	String assetValue=  newobj.get("Message").toString();
+	  
+		 if(assetValue.equals("Registered Successfully."))
+		 {
+			 Assert.assertTrue(true);
+		 }
+		 else
+		 {
+			 Assert.assertTrue(false);
+ 
+		 }
 	 }
   
-  private static void postWorker(String requestUrl, String payload) throws Exception {
+  private static String postWorker(String requestUrl, String payload) throws Exception {
 		
 
 	  URL url = new URL(requestUrl);
@@ -87,6 +143,7 @@ public class NewTest {
 	  connection.disconnect();
 	  
 	  System.out.println( jsonString.toString()); 
+	  return  jsonString.toString();
 	 	 
 	  }
 

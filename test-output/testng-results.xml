@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="2016" started-at="2016-09-05T06:23:43Z" finished-at="2016-09-05T06:23:45Z">
+  <suite name="Default suite" duration-ms="2743" started-at="2016-09-09T11:55:49Z" finished-at="2016-09-09T11:55:51Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="2016" started-at="2016-09-05T06:23:43Z" finished-at="2016-09-05T06:23:45Z">
+    <test name="Default test" duration-ms="2743" started-at="2016-09-09T11:55:49Z" finished-at="2016-09-09T11:55:51Z">
       <class name="com.NewTest">
-        <test-method status="PASS" signature="f()[pri:0, instance:com.NewTest@4de8b406]" name="f" duration-ms="1262" started-at="2016-09-05T11:53:43Z" finished-at="2016-09-05T11:53:44Z">
+        <test-method status="PASS" signature="LoginMyUser()[pri:0, instance:com.NewTest@4de8b406]" name="LoginMyUser" duration-ms="1128" started-at="2016-09-09T17:25:49Z" finished-at="2016-09-09T17:25:50Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- f -->
-        <test-method status="PASS" signature="f1()[pri:0, instance:com.NewTest@4de8b406]" name="f1" duration-ms="719" started-at="2016-09-05T11:53:44Z" finished-at="2016-09-05T11:53:45Z">
+        </test-method> <!-- LoginMyUser -->
+        <test-method status="PASS" signature="RegisterNewUser()[pri:0, instance:com.NewTest@4de8b406]" name="RegisterNewUser" duration-ms="1588" started-at="2016-09-09T17:25:50Z" finished-at="2016-09-09T17:25:51Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- f1 -->
+        </test-method> <!-- RegisterNewUser -->
       </class> <!-- com.NewTest -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
